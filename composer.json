@@ -1,0 +1,34 @@
+{
+    "name": "php-architecture-kit/domain-core",
+    "description": "Domain Core abstract classes, interfaces and categorized exceptions.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "email": "patryk.baszak@gmail.com",
+            "name": "Patryk Baszak",
+            "homepage": "https://patrykbaszak.com/"
+        }
+    ],
+    "keywords": [
+        "aggregate",
+        "domain-core",
+        "ddd",
+        "framework-agnostic"
+    ],
+    "homepage": "https://github.com/php-architecture-kit/domain-core",
+    "support": {
+        "issues": "https://github.com/php-architecture-kit/domain-core/issues",
+        "source": "https://github.com/php-architecture-kit/domain-core"
+    },
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpArchitecture\\DomainCore\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
