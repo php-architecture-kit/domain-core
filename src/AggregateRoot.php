@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace PhpArchitecture\DomainCore;
 
+/**
+ * @property Identity\AggregateId $id
+ */
 abstract class AggregateRoot
 {
     /** @var DomainEvent[] */
