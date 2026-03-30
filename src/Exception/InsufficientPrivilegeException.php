@@ -12,7 +12,7 @@ use DomainException;
  *
  * Suggested HTTP mapping: 403 Forbidden.
  */
-class InsufficientPrivilegeException extends \DomainException
+class InsufficientPrivilegeException extends DomainException
 {
     
 }

@@ -12,7 +12,7 @@ use DomainException;
  *
  * Suggested HTTP mapping: 451 Unavailable For Legal Reasons.
  */
-class LegalRestrictionException extends \DomainException 
+class LegalRestrictionException extends DomainException 
 {
     
 }

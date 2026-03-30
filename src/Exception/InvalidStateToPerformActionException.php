@@ -12,7 +12,7 @@ use DomainException;
  *
  * Suggested HTTP mapping: 409 Conflict.
  */
-class InvalidStateToPerformActionException extends \DomainException 
+class InvalidStateToPerformActionException extends DomainException 
 {
     
 }

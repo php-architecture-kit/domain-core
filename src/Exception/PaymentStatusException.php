@@ -12,7 +12,7 @@ use DomainException;
  *
  * Suggested HTTP mapping: 402 Payment Required.
  */
-class PaymentStatusException extends \DomainException 
+class PaymentStatusException extends DomainException 
 {
     
 }

@@ -12,7 +12,7 @@ use DomainException;
  *
  * Suggested HTTP mapping: 424 Failed Dependency.
  */
-class DependencyStateException extends \DomainException 
+class DependencyStateException extends DomainException 
 {
     
 }

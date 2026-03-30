@@ -12,7 +12,7 @@ use DomainException;
  *
  * Suggested HTTP mapping: 400 Bad Request.
  */
-class InvalidInputException extends \DomainException 
+class InvalidInputException extends DomainException 
 {
     
 }

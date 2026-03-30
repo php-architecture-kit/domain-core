@@ -12,7 +12,7 @@ use DomainException;
  *
  * Suggested HTTP mapping: 422 Unprocessable Entity.
  */
-class InvalidStateCausedException extends \DomainException 
+class InvalidStateCausedException extends DomainException 
 {
     
 }
