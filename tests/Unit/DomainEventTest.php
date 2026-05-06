@@ -7,13 +7,14 @@ namespace Tests\PhpArchitecture\DomainCore\Unit;
 use PhpArchitecture\DomainCore\DomainEvent;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 class DomainEventTest extends TestCase
 {
     #[Test]
     public function domainEventIsInterface(): void
     {
-        $reflection = new \ReflectionClass(DomainEvent::class);
+        $reflection = new ReflectionClass(DomainEvent::class);
 
         $this->assertTrue($reflection->isInterface());
     }

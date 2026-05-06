@@ -15,20 +15,22 @@ use PhpArchitecture\DomainCore\Exception\PaymentStatusException;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Exception;
+use Throwable;
 
 class ExceptionHierarchyTest extends TestCase
 {
-    /** @param class-string<\Throwable> $exceptionClass */
+    /** @param class-string<Throwable> $exceptionClass */
     #[Test]
     #[DataProvider('exceptionClassProvider')]
     public function allExceptionsExtendDomainException(string $exceptionClass): void
     {
         $exception = new $exceptionClass('test');
 
-        $this->assertInstanceOf(\DomainException::class, $exception);
+        $this->assertInstanceOf(DomainException::class, $exception);
     }
 
-    /** @param class-string<\Throwable> $exceptionClass */
+    /** @param class-string<Throwable> $exceptionClass */
     #[Test]
     #[DataProvider('exceptionClassProvider')]
     public function allExceptionsHaveCorrectMessage(string $exceptionClass): void
@@ -39,18 +41,18 @@ class ExceptionHierarchyTest extends TestCase
         $this->assertSame($message, $exception->getMessage());
     }
 
-    /** @param class-string<\Throwable> $exceptionClass */
+    /** @param class-string<Throwable> $exceptionClass */
     #[Test]
     #[DataProvider('exceptionClassProvider')]
     public function allExceptionsAcceptPreviousException(string $exceptionClass): void
     {
-        $previous = new \Exception('Previous error');
+        $previous = new Exception('Previous error');
         $exception = new $exceptionClass('test', 0, $previous);
 
         $this->assertSame($previous, $exception->getPrevious());
     }
 
-    /** @param class-string<\Throwable> $exceptionClass */
+    /** @param class-string<Throwable> $exceptionClass */
     #[Test]
     #[DataProvider('exceptionClassProvider')]
     public function allExceptionsAcceptCode(string $exceptionClass): void
@@ -66,7 +68,7 @@ class ExceptionHierarchyTest extends TestCase
     {
         $exception = new InvalidInputException('Invalid email format');
 
-        $this->assertInstanceOf(\DomainException::class, $exception);
+        $this->assertInstanceOf(DomainException::class, $exception);
     }
 
     #[Test]
@@ -74,7 +76,7 @@ class ExceptionHierarchyTest extends TestCase
     {
         $exception = new PaymentStatusException('Payment required');
 
-        $this->assertInstanceOf(\DomainException::class, $exception);
+        $this->assertInstanceOf(DomainException::class, $exception);
     }
 
     #[Test]
@@ -82,7 +84,7 @@ class ExceptionHierarchyTest extends TestCase
     {
         $exception = new InsufficientPrivilegeException('Access denied');
 
-        $this->assertInstanceOf(\DomainException::class, $exception);
+        $this->assertInstanceOf(DomainException::class, $exception);
     }
 
     #[Test]
@@ -90,7 +92,7 @@ class ExceptionHierarchyTest extends TestCase
     {
         $exception = new InvalidStateToPerformActionException('Order already cancelled');
 
-        $this->assertInstanceOf(\DomainException::class, $exception);
+        $this->assertInstanceOf(DomainException::class, $exception);
     }
 
     #[Test]
@@ -98,7 +100,7 @@ class ExceptionHierarchyTest extends TestCase
     {
         $exception = new InvalidStateCausedException('Invalid state transition');
 
-        $this->assertInstanceOf(\DomainException::class, $exception);
+        $this->assertInstanceOf(DomainException::class, $exception);
     }
 
     #[Test]
@@ -106,7 +108,7 @@ class ExceptionHierarchyTest extends TestCase
     {
         $exception = new DependencyStateException('Dependent resource not found');
 
-        $this->assertInstanceOf(\DomainException::class, $exception);
+        $this->assertInstanceOf(DomainException::class, $exception);
     }
 
     #[Test]
@@ -114,7 +116,7 @@ class ExceptionHierarchyTest extends TestCase
     {
         $exception = new LegalRestrictionException('Content restricted in your region');
 
-        $this->assertInstanceOf(\DomainException::class, $exception);
+        $this->assertInstanceOf(DomainException::class, $exception);
     }
 
     /**
