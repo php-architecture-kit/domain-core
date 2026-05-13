@@ -30,7 +30,7 @@ class AggregateRootTest extends TestCase
     #[Test]
     public function recordEventAddsEventToList(): void
     {
-        $event = $this->createMock(DomainEvent::class);
+        $event = $this->createStub(DomainEvent::class);
         $aggregate = new TestableAggregateRoot();
 
         $aggregate->doSomethingThatRecordsEvent($event);
@@ -42,9 +42,9 @@ class AggregateRootTest extends TestCase
     #[Test]
     public function recordEventPreservesOrder(): void
     {
-        $event1 = $this->createMock(DomainEvent::class);
-        $event2 = $this->createMock(DomainEvent::class);
-        $event3 = $this->createMock(DomainEvent::class);
+        $event1 = $this->createStub(DomainEvent::class);
+        $event2 = $this->createStub(DomainEvent::class);
+        $event3 = $this->createStub(DomainEvent::class);
 
         $aggregate = new TestableAggregateRoot();
 
@@ -63,8 +63,8 @@ class AggregateRootTest extends TestCase
     #[Test]
     public function releaseEventsReturnsAndClearsEvents(): void
     {
-        $event1 = $this->createMock(DomainEvent::class);
-        $event2 = $this->createMock(DomainEvent::class);
+        $event1 = $this->createStub(DomainEvent::class);
+        $event2 = $this->createStub(DomainEvent::class);
 
         $aggregate = new TestableAggregateRoot();
 
@@ -90,7 +90,7 @@ class AggregateRootTest extends TestCase
     #[Test]
     public function multipleReleaseEventsCallsReturnEmptyAfterFirst(): void
     {
-        $event = $this->createMock(DomainEvent::class);
+        $event = $this->createStub(DomainEvent::class);
 
         $aggregate = new TestableAggregateRoot();
 
@@ -106,7 +106,7 @@ class AggregateRootTest extends TestCase
     #[Test]
     public function getEventsDoesNotClearEvents(): void
     {
-        $event = $this->createMock(DomainEvent::class);
+        $event = $this->createStub(DomainEvent::class);
 
         $aggregate = new TestableAggregateRoot();
 
@@ -123,8 +123,8 @@ class AggregateRootTest extends TestCase
     #[Test]
     public function eventsCanBeRecordedAfterRelease(): void
     {
-        $event1 = $this->createMock(DomainEvent::class);
-        $event2 = $this->createMock(DomainEvent::class);
+        $event1 = $this->createStub(DomainEvent::class);
+        $event2 = $this->createStub(DomainEvent::class);
 
         $aggregate = new TestableAggregateRoot();
 
