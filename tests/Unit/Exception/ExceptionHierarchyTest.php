@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\PhpArchitecture\DomainCore\Unit\Exception;
+namespace PhpArchitecture\DomainCore\Tests\Unit\Exception;
 
 use DomainException;
 use PhpArchitecture\DomainCore\Exception\DependencyStateException;
