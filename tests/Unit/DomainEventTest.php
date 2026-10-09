@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\PhpArchitecture\DomainCore\Unit;
+namespace PhpArchitecture\DomainCore\Tests\Unit;
 
 use PhpArchitecture\DomainCore\DomainEvent;
 use PHPUnit\Framework\Attributes\Test;
